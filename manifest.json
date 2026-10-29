@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "X Feed Blocker",
+  "version": "1.0.0",
+  "description": "Hides the X home feed, Explore and recommendations while keeping posting, notifications, DMs and individual posts usable.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "X Feed Blocker",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*", "https://mobile.x.com/*", "https://mobile.twitter.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

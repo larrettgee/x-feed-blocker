@@ -1,0 +1,46 @@
+/* Home: hide the timeline and the For you / Following tabs, keep the composer. */
+html[data-xfb-home="on"][data-xfb-page="home"] [data-testid="primaryColumn"] section[role="region"],
+html[data-xfb-home="on"][data-xfb-page="home"] [data-testid="primaryColumn"] [role="tablist"] {
+  display: none !important;
+}
+
+/* Explore: hide trends/recommendations, keep the search box. */
+html[data-xfb-explore="on"][data-xfb-page="explore"] [data-testid="primaryColumn"] section[role="region"],
+html[data-xfb-explore="on"][data-xfb-page="explore"] [data-testid="primaryColumn"] [role="tablist"] {
+  display: none !important;
+}
+
+/* Right sidebar: until content.js finds the Today's News module, hide every module.
+   Once it's found, content.js hides everything around it instead. */
+html[data-xfb-sidebar="on"]:not([data-xfb-news="found"]) [data-testid="sidebarColumn"] section,
+html[data-xfb-sidebar="on"]:not([data-xfb-news="found"]) [data-testid="sidebarColumn"] aside {
+  display: none !important;
+}
+
+/* Elements marked by content.js (e.g. "Discover more" under a post). */
+[data-xfb-hidden],
+[data-xfb-sidebar-hidden],
+[data-xfb-pill-hidden] {
+  display: none !important;
+}
+
+#xfb-notice {
+  margin: 32px 16px;
+  padding: 20px;
+  border: 1px solid rgb(83, 100, 113);
+  border-radius: 16px;
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: rgb(113, 118, 123);
+  text-align: center;
+}
+#xfb-notice strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 17px;
+  color: inherit;
+}
+#xfb-notice a {
+  color: rgb(29, 155, 240);
+  text-decoration: none;
+  margin: 0 6px;
+}
